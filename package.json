@@ -1,0 +1,24 @@
+{
+  "name": "aru",
+  "version": "1.5.1",
+  "description": "a dedicated bot for No System (formerly The System) discord server.",
+  "homepage": "https://github.com/Oreo-1/Aru#readme",
+  "bugs": {
+    "url": "https://github.com/Oreo-1/Aru/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oreo-1/Aru.git"
+  },
+  "license": "GPL-3.0-or-later",
+  "author": "Oreo-1",
+  "type": "commonjs",
+  "main": "aru-main/aru.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "discord.js": "^14.22.1",
+    "dotenv": "^17.2.2"
+  }
+}
