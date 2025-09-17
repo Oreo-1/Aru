@@ -162,7 +162,24 @@ if (m.content.startsWith('.waifu')) {
 }
 
 // [3g] Fun: Coin flip
-if (m.content === '.coin') {m.channel.send(AruVar.coinflip[Math.floor(Math.random() * AruVar.coinflip.length)])}
+// if (m.content === '.coin') {m.channel.send(AruVar.coinflip[Math.floor(Math.random() * AruVar.coinflip.length)])}
+if (m.content.startsWith('.coin')) {
+    if (m.channel.type === "dm") {
+        return m.channel.send("Sorry, this command isn't available on dm!");
+    }
+
+    const isHeads = Math.random() < 0.5;
+    const coinArray = isHeads ? AruVar.coinflipH : AruVar.coinflipT;
+    const coinItself = coinArray[Math.floor(Math.random() * coinArray.length)];
+
+    const embed = new EmbedBuilder()
+        .setAuthor({ name: `${m.author.username} :`, iconURL: m.author.avatarURL() })
+        .setColor(0x00C8FF)
+        .setTitle(isHeads ? "Heads!" : "Tails!")
+        .setImage(coinItself);
+
+    m.channel.send({ embeds: [embed] });
+}
 
 // [3h] Fun: Cookie
     if (m.content.startsWith('.cookie')) {
