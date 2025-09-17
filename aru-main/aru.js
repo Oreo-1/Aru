@@ -513,7 +513,7 @@ switch(m.content.toUpperCase()) {case 'EWE': m.channel.send('lale')}
 if (m.content === '.shutdown') {
   if (m.member.permissions.has('Administrator')) {
     await m.channel.send('Shutting down...');
-    console.log(`${c.user.tag} is offline.`);
+    console.log(`aru is offline (from shutdown admin command)`);
     aru.destroy(); // Disconnects the bot from Discord
   } else {
     await m.channel.send('nein');
