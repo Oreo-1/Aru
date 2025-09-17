@@ -1,7 +1,7 @@
-const Variables = require('./variables');
-const AruVar = Variables[0];
 require('dotenv').config();
 const { Client , ActivityType , PresenceUpdateStatus , IntentsBitField , EmbedBuilder } = require('discord.js');
+const Variables = require('./variables');
+const AruVar = Variables[0];
 
 const aru = new Client({
     intents: [
