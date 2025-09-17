@@ -10,7 +10,7 @@ const aru = new Client({
     ],
 });
 
-aru.on('ready', (c) => {
+aru.on('clientReady', (c) => {
     console.log(`${c.user.tag} is online.`);
 
     aru.user.setPresence({ 
@@ -57,7 +57,7 @@ if (m.content.startsWith('.feedback')) {
 }
 
 // [3a] Fun: Hug
-var huglinks = ["https://cdn.discordapp.com/attachments/620937132030296065/695996058819494038/tenor.gif",
+let huglinks = ["https://cdn.discordapp.com/attachments/620937132030296065/695996058819494038/tenor.gif",
 "https://cdn.discordapp.com/attachments/620937132030296065/695994095000354826/tenor.gif",
 "https://cdn.discordapp.com/attachments/620937132030296065/728325460798472242/hugkon.gif",
 "https://cdn.discordapp.com/attachments/620937132030296065/728325525013135440/noragamikofuku.gif",
@@ -81,7 +81,7 @@ if (m.content.startsWith('.hug')) {
 }
 
 // [3b] Fun: Pat
-var patlinks = ["https://i.imgur.com/XjsEMiK.gif",
+let patlinks = ["https://i.imgur.com/XjsEMiK.gif",
 "https://cdn.discordapp.com/attachments/553082144423936003/706837137504337981/3604278f5faba113671a93412540bd47.gif",
 "https://cdn.discordapp.com/attachments/553082144423936003/720531535031435304/RooPat.gif",
 "https://cdn.discordapp.com/attachments/553082144423936003/726090430290067558/tenor9.gif",
@@ -97,7 +97,7 @@ var patlinks = ["https://i.imgur.com/XjsEMiK.gif",
 "https://cdn.discordapp.com/attachments/553082144423936003/726683630923153408/187369.gif",
 "https://cdn.discordapp.com/attachments/553082144423936003/726683637755543552/rikka_pat.gif",
 "https://cdn.discordapp.com/attachments/553082144423936003/726683677228007454/e.gif",
-"https://media.discordapp.net/attachments/573101060852416513/747326714459324508/nekopara2.gif"]
+"https://media.discordapp.net/attachments/573101060852416513/747326714459324508/nekopara2.gif"];
 
 if (m.content.startsWith('.pat')) {
   if (m.channel.type == "dm") return m.channel.send("Sorry, this command isn't available on dm!")
@@ -146,7 +146,7 @@ if (m.content.startsWith('.punch')) {
 }
 
 // [3e] Fun: Bite
-var bitelinks = ["https://cdn.discordapp.com/attachments/676118559612600371/711758483728498709/bite1.gif",
+let bitelinks = ["https://cdn.discordapp.com/attachments/676118559612600371/711758483728498709/bite1.gif",
 "https://cdn.discordapp.com/attachments/676118559612600371/711758483292160041/bite2.gif",
 "https://cdn.discordapp.com/attachments/676118559612600371/711758453806202940/bite3.gif"];
 
@@ -190,11 +190,11 @@ if (m.content.startsWith('.waifu')) {
 }
 
 // [3g] Fun: Coin flip
-var coinflip = ["Heads!","Tails!"]
+let coinflip = ["Heads!","Tails!"]
 if (m.content === '.coin') {m.channel.send(coinflip[Math.floor(Math.random() * coinflip.length)])}
 
 // [3h] Fun: Cookie
-var cookiegive = [
+let cookiegive = [
     "https://cdn.discordapp.com/attachments/573101060852416513/735752567543300126/DBvbJ4grTZuOgR3YyWCliS-w6GOn0R5VN2Zg9zKdefiNhTNh_wXlJOwK-aeICmkPNcUd5YVd-_bseyqA9tnWTg.gif",
     "https://cdn.discordapp.com/attachments/573101060852416513/735752592365191268/7c33f9034d0fbd27504683dfcfc619a3.gif",
     "https://cdn.discordapp.com/attachments/573101060852416513/735752676154802197/31d1baa26c7c31e22b2e065f7dd4493abeb9ae5a_hq.gif",
@@ -227,7 +227,7 @@ var cookiegive = [
 }
 
 // [3i] Fun: Ask Aru
-var aruask = [
+let aruask = [
     "Yes.",
     "Yeah.",
     "Yep.",
@@ -250,7 +250,7 @@ var aruask = [
     if (m.content === '.ask') {m.channel.send(aruask[Math.floor(Math.random() * aruask.length)])}
 
 // [3j] Fun: Aru's Fortune
-var AruFortune = [
+let AruFortune = [
     "||Aru: it'll only get worse from now on..||",
     "||Aru: i can sense something bad is about to happen..||",
     "||Aru: oh about that... i don't know HAHA||",
@@ -275,7 +275,7 @@ if (m.content.startsWith('.fortune')) {
 if(m.content === ".say"){m.channel.send("due to a bug, this command has been disabled.")}
 
 // [3l] Fun: Dance
-var dancelinks = [
+let dancelinks = [
     "https://cdn.discordapp.com/attachments/620937132030296065/635117143687692289/giphy.gif",
     "https://cdn.discordapp.com/attachments/620937132030296065/706103404518178857/tenor_1.gif",
     "https://cdn.discordapp.com/attachments/689835202117238883/714092912874356756/downloadfile-1.gif",
@@ -311,7 +311,7 @@ if (m.content === '.dance') {
     m.channel.send({embeds: [embed]});
 }
 
-var Neko = [
+let Neko = [
     "https://cdn.discordapp.com/attachments/564722903267016704/602411476787003402/nekoattention.gif",
     "https://cdn.discordapp.com/attachments/553082144423936003/714089450396975104/cioccolata.gif",
     "https://cdn.discordapp.com/attachments/561481507667968010/715011892711522305/e661e8116f07c0a972b50fa22a29475a.gif",
@@ -339,7 +339,7 @@ if (m.content === '.neko') {
 }
 
 // [3n] Fun: Pout
-var poutlinks = ["https://cdn.discordapp.com/attachments/553082144423936003/727606612352827502/tumblr_nham95OVWg1rgfa0po1_500.gif",
+let poutlinks = ["https://cdn.discordapp.com/attachments/553082144423936003/727606612352827502/tumblr_nham95OVWg1rgfa0po1_500.gif",
     "https://cdn.discordapp.com/attachments/553082144423936003/727606685970989086/CFZxvJD.gif",
     "https://cdn.discordapp.com/attachments/553082144423936003/727606689813102642/anime-pout-gif-3.gif",
     "https://cdn.discordapp.com/attachments/553082144423936003/727606730212769913/7e6.gif",
@@ -367,7 +367,7 @@ if (m.content.startsWith('.pout')) {
 }
 
 // [3o] Fun: Bongo
-var Bongo = [
+let Bongo = [
     "https://cdn.discordapp.com/attachments/553082144423936003/715009542848643102/tenor.gif",
     "https://cdn.discordapp.com/attachments/553082144423936003/714087470131707914/Neko_Bang.gif"
 ];
@@ -382,7 +382,7 @@ if (m.content === '.bongo') {
   }
   
   // [3p] Fun: Card
-var cards = ['https://cdn.discordapp.com/attachments/573101060852416513/778171730546917416/queen_of_clubs2.png',
+let cards = ['https://cdn.discordapp.com/attachments/573101060852416513/778171730546917416/queen_of_clubs2.png',
   'https://cdn.discordapp.com/attachments/573101060852416513/778171731180388372/queen_of_diamonds2.png',
   'https://cdn.discordapp.com/attachments/573101060852416513/778171731495223306/queen_of_hearts2.png',
   'https://cdn.discordapp.com/attachments/573101060852416513/778171731999326249/queen_of_spades2.png',
@@ -459,7 +459,7 @@ if (m.content === '.dice') {
 } // please put an actual dice picture to this boring command
 
 // [3r] Fun: AHH
-var AHH = [
+let AHH = [
   "https://i.imgur.com/BG6inrc.png",
   "https://cdn.discordapp.com/attachments/620937132030296065/662590221875150868/1578044160318-951x823.png",
   "https://i.imgur.com/BG6inrc.png",
@@ -477,19 +477,22 @@ if (m.content.toLowerCase() === '.ahh') {
 }
 
 // [3s] Fun: Run
+let run = [
+  "https://cdn.discordapp.com/attachments/553082144423936003/695944105536258089/nigerundayo.gif",
+];
 if (m.content === '.run') {
   if (m.channel.type == "dm") return m.channel.send("Sorry, this command isn't available on dm!")
   const embed = new EmbedBuilder()
 
   .setAuthor({ name: `${m.author.username} : nope nope nope nope`, iconURL: `${m.author.avatarURL()}`})
   .setColor(m.member.displayHexColor)
-  .setImage("https://cdn.discordapp.com/attachments/553082144423936003/695944105536258089/nigerundayo.gif")
+  .setImage(run)
 
   m.channel.send({embeds: [embed]});
 }
 
 // [3t] Fun: Blob
-var danceblobs = [
+let danceblobs = [
   "https://cdn.discordapp.com/attachments/620937132030296065/650327807070830592/645711992673533969-1.gif",
   "https://cdn.discordapp.com/attachments/620937132030296065/665553643537170433/677395972243472emoji.gif",
   "https://cdn.discordapp.com/attachments/620937132030296065/684686155090100224/6196_Party_Blob_Reverse_78906.gif",
@@ -507,32 +510,34 @@ var danceblobs = [
 }
 
 // [3u] Fun: Kurbeh
+let kurbeh = ["https://cdn.discordapp.com/attachments/620937132030296065/656520919694442536/1570186807797-768x768.png"]
 if (m.content === '.kurbeh') {
   if (m.channel.type == "dm") return m.channel.send("Sorry, this command isn't available on dm!")
   const embed = new EmbedBuilder()
 
   .setAuthor({ name: `${m.author.username} :`, iconURL: `${m.author.avatarURL()}`})
   .setColor(m.member.displayHexColor)
-  .setImage("https://cdn.discordapp.com/attachments/620937132030296065/656520919694442536/1570186807797-768x768.png")
+  .setImage(kurbeh)
 
   m.channel.send({embeds: [embed]});
 }
 
 // [3v] Fun: REEEeeEE
+let reee = ["https://cdn.discordapp.com/attachments/553082144423936003/709207112634466364/699271165411344emoji.gif"]
 if (m.content === '.ree') {
   if (m.channel.type == "dm") return m.channel.send("Sorry, this command isn't available on dm!")
   const embed = new EmbedBuilder()
 
   .setAuthor({ name: `${m.author.username} :`, iconURL: `${m.author.avatarURL()}`})
   .setColor(m.member.displayHexColor)
-  .setImage("https://cdn.discordapp.com/attachments/553082144423936003/709207112634466364/699271165411344emoji.gif")
+  .setImage(reee)
   .setFooter({text: 'REEEEEEE'})
 
   m.channel.send({embeds: [embed]});
 }
 
 // [3w] Fun: What
-var what = [
+let what = [
   "https://cdn.discordapp.com/attachments/620937132030296065/714093065098362913/unnamed.gif",
   "https://media.giphy.com/media/l1IBhDuqBY767LHGM/giphy.gif",
   
@@ -549,7 +554,7 @@ if (m.content.startsWith('.what')) {
 }
 
 // [3x] Fun: Ara ara
-var Ara = [
+let Ara = [
   "https://cdn.discordapp.com/attachments/642699261892624395/717581826423521320/community_image_1425833327.gif",
   "https://cdn.discordapp.com/attachments/642699261892624395/717589536829603882/tumblr_n0x2qamh4X1r45wgho1_500.gif",
   "https://cdn.discordapp.com/attachments/620937132030296065/726646649077629069/chika_ara_ara.gif",
@@ -689,7 +694,7 @@ if (m.content === '.invite') {
 if (m.content === '.members') {m.channel.send('<:soontm:662611931475214376>')}
 
 // [5a] Misc Response: Aru
-var callaru = ["yeah?","wot","sup","huh","ewot","nanda","apa",]
+let callaru = ["yeah?","wot","sup","huh","ewot","nanda","apa",]
 switch(m.content.toUpperCase()) {
   case 'ARU': m.channel.send(callaru[Math.floor(Math.random() * callaru.length)])
 }
