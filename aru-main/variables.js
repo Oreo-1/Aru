@@ -186,17 +186,15 @@ const Variables = [
             "https://i.imgur.com/BG6inrc.png",
             "https://i.imgur.com/BG6inrc.png",
         ],
-        run: [
-            "https://cdn.discordapp.com/attachments/553082144423936003/695944105536258089/nigerundayo.gif",
-        ],
+        run: "https://cdn.discordapp.com/attachments/553082144423936003/695944105536258089/nigerundayo.gif",
         danceblobs: [
             "https://cdn.discordapp.com/attachments/620937132030296065/650327807070830592/645711992673533969-1.gif",
             "https://cdn.discordapp.com/attachments/620937132030296065/665553643537170433/677395972243472emoji.gif",
             "https://cdn.discordapp.com/attachments/620937132030296065/684686155090100224/6196_Party_Blob_Reverse_78906.gif",
         
         ],
-        kurbeh: ["https://cdn.discordapp.com/attachments/620937132030296065/656520919694442536/1570186807797-768x768.png"],
-        reee: ["https://cdn.discordapp.com/attachments/553082144423936003/709207112634466364/699271165411344emoji.gif"],
+        kurbeh: "https://cdn.discordapp.com/attachments/620937132030296065/656520919694442536/1570186807797-768x768.png",
+        reee: "https://cdn.discordapp.com/attachments/553082144423936003/709207112634466364/699271165411344emoji.gif",
         what: [
             "https://cdn.discordapp.com/attachments/620937132030296065/714093065098362913/unnamed.gif",
             "https://media.giphy.com/media/l1IBhDuqBY767LHGM/giphy.gif",

@@ -1,4 +1,5 @@
-const Variables = require('./variables')
+const Variables = require('./variables');
+const AruVar = Variables[0];
 require('dotenv').config();
 const { Client , ActivityType , PresenceUpdateStatus , IntentsBitField , EmbedBuilder } = require('discord.js');
 
@@ -67,7 +68,7 @@ if (m.content.startsWith('.hug')) {
   const embed = new EmbedBuilder()
   .setDescription(`${m.author} **gave** ${member} **a hug!**`)
   .setColor(m.member.displayHexColor)
-  .setImage(Variables.huglinks[Math.floor(Math.random() * Variables.huglinks.length)])
+  .setImage(AruVar.huglinks[Math.floor(Math.random() * AruVar.huglinks.length)])
 
   m.channel.send({embeds: [embed]});
 
@@ -83,7 +84,7 @@ if (m.content.startsWith('.pat')) {
   const embed = new EmbedBuilder()
   .setDescription(`${m.author} **gave** ${member} **a pat!**`)
   .setColor(m.member.displayHexColor)
-  .setImage(Variables.patlinks[Math.floor(Math.random() * Variables.patlinks.length)])
+  .setImage(AruVar.patlinks[Math.floor(Math.random() * AruVar.patlinks.length)])
 
   m.channel.send({embeds: [embed]});
 
@@ -130,7 +131,7 @@ if (m.content.startsWith('.bite')) {
   const embed = new EmbedBuilder()
   .setDescription(`${m.author} **bites** ${member}**!**`)
   .setColor(m.member.displayHexColor)
-  .setImage(Variables.bitelinks[Math.floor(Math.random() * Variables.bitelinks.length)])   
+  .setImage(AruVar.bitelinks[Math.floor(Math.random() * AruVar.bitelinks.length)])   
   
   m.channel.send({embeds: [embed]});
 
@@ -161,7 +162,7 @@ if (m.content.startsWith('.waifu')) {
 }
 
 // [3g] Fun: Coin flip
-if (m.content === '.coin') {m.channel.send(Variables[0].coinflip[Math.floor(Math.random() * Variables[0].coinflip.length)])}
+if (m.content === '.coin') {m.channel.send(AruVar.coinflip[Math.floor(Math.random() * AruVar.coinflip.length)])}
 
 // [3h] Fun: Cookie
     if (m.content.startsWith('.cookie')) {
@@ -170,7 +171,7 @@ if (m.content === '.coin') {m.channel.send(Variables[0].coinflip[Math.floor(Math
     
       const cookieembed1 = new EmbedBuilder()
       .setDescription(`have yourself a cookie :cookie:`)
-      .setImage(Variables.cookiegive[Math.floor(Math.random() * Variables.cookiegive.length)])
+      .setImage(AruVar.cookiegive[Math.floor(Math.random() * AruVar.cookiegive.length)])
       .setColor(m.member.displayHexColor)
   
       if (!member) {
@@ -179,14 +180,14 @@ if (m.content === '.coin') {m.channel.send(Variables[0].coinflip[Math.floor(Math
     
       const cookieembed2 = new EmbedBuilder()
       .setDescription(`${member} **got a <:heavenly_cookie:637822807631331329> from ${m.author}**`)
-      .setImage(Variables.cookiegive[Math.floor(Math.random() * Variables.cookiegive.length)])
+      .setImage(AruVar.cookiegive[Math.floor(Math.random() * AruVar.cookiegive.length)])
       .setColor(m.member.displayHexColor)
     m.channel.send({ embeds: [cookieembed2] });
     
 }
 
 // [3i] Fun: Ask Aru
-if (m.content === '.ask') {m.channel.send(Variables.aruask[Math.floor(Math.random() * Variables.aruask.length)])}
+if (m.content === '.ask') {m.channel.send(AruVar.aruask[Math.floor(Math.random() * AruVar.aruask.length)])}
 
 // [3j] Fun: Aru's Fortune
 if (m.content.startsWith('.fortune')) {
@@ -195,7 +196,7 @@ if (m.content.startsWith('.fortune')) {
     const embed = new EmbedBuilder()
     .setAuthor({ name: `${m.author.username} :`, iconURL: `${m.author.avatarURL()}`})
     .setColor(0x00C8FF)
-    .setDescription(Variables.AruFortune[Math.floor(Math.random() * Variables.AruFortune.length)])
+    .setDescription(AruVar.AruFortune[Math.floor(Math.random() * AruVar.AruFortune.length)])
     
     m.channel.send({embeds: [embed]});
 }
@@ -210,7 +211,7 @@ if (m.content === '.dance') {
     const embed = new EmbedBuilder()
     .setAuthor({ name: `${m.author.username} :`, iconURL: `${m.author.avatarURL()}`})
     .setColor(m.member.displayHexColor)
-    .setImage(Variables.dancelinks[Math.floor(Math.random() * Variables.dancelinks.length)])
+    .setImage(AruVar.dancelinks[Math.floor(Math.random() * AruVar.dancelinks.length)])
     
     m.channel.send({embeds: [embed]});
 }
@@ -222,7 +223,7 @@ if (m.content === '.neko') {
     const embed = new EmbedBuilder()
     .setAuthor({ name: `${m.author.username} :`, iconURL: `${m.author.avatarURL()}`})
     .setColor(m.member.displayHexColor)
-    .setImage(Variables.Neko[Math.floor(Math.random() * Variables.Neko.length)])
+    .setImage(AruVar.Neko[Math.floor(Math.random() * AruVar.Neko.length)])
     .setFooter({text: 'Have a neko ≧OwO≦'})
 
     m.channel.send({embeds: [embed]});
@@ -235,7 +236,7 @@ if (m.content.startsWith('.pout')) {
     const embed = new EmbedBuilder()
     .setAuthor({ name: `${m.author.username} :`, iconURL: `${m.author.avatarURL()}`})
     .setColor(m.member.displayHexColor)
-    .setImage(Variables.poutlinks[Math.floor(Math.random() * Variables.poutlinks.length)])
+    .setImage(AruVar.poutlinks[Math.floor(Math.random() * AruVar.poutlinks.length)])
     
     m.channel.send({embeds: [embed]});
 }
@@ -246,7 +247,7 @@ if (m.content === '.bongo') {
     const embed = new EmbedBuilder()
     .setAuthor({ name: `${m.author.username} :`, iconURL: `${m.author.avatarURL()}`})
     .setColor(m.member.displayHexColor)
-    .setImage(Variables.Bongo[Math.floor(Math.random() * Variables.Bongo.length)])
+    .setImage(AruVar.Bongo[Math.floor(Math.random() * AruVar.Bongo.length)])
 
     m.channel.send({embeds: [embed]});
   }
@@ -257,7 +258,7 @@ if (m.content === '.card') {
     const embed = new EmbedBuilder()
     .setAuthor({ name: `${m.author.username}, you drew`, iconURL: `${m.author.avatarURL()}`})
     .setColor(m.member.displayHexColor)
-    .setImage(Variables.cards[Math.floor(Math.random() * Variables.cards.length)])
+    .setImage(AruVar.cards[Math.floor(Math.random() * AruVar.cards.length)])
 
   m.channel.send({embeds: [embed]});
 }
@@ -278,7 +279,7 @@ if (m.content.toLowerCase() === '.ahh') {
   const embed = new EmbedBuilder()
   .setAuthor({ name: `${m.author.username} :`, iconURL: `${m.author.avatarURL()}`})
   .setColor(0x3333CC)
-  .setImage(Variables[0].AHH[Math.floor(Math.random() * Variables[0].AHH.length)])
+  .setImage(AruVar.AHH[Math.floor(Math.random() * AruVar.AHH.length)])
   .setFooter({text: 'srsly why do u like to scream so much :P'})
   
   m.channel.send({embeds: [embed]});
@@ -291,7 +292,7 @@ if (m.content === '.run') {
 
   .setAuthor({ name: `${m.author.username} : nope nope nope nope`, iconURL: `${m.author.avatarURL()}`})
   .setColor(m.member.displayHexColor)
-  .setImage(Variables.run)
+  .setImage(AruVar.run)
 
   m.channel.send({embeds: [embed]});
 }
@@ -303,7 +304,7 @@ if (m.content === '.run') {
 
   .setAuthor({ name: `${m.author.username} :`, iconURL: `${m.author.avatarURL()}`})
   .setColor(m.member.displayHexColor)
-  .setImage(Variables.danceblobs[Math.floor(Math.random() * Variables.danceblobs.length)])
+  .setImage(AruVar.danceblobs[Math.floor(Math.random() * AruVar.danceblobs.length)])
 
   m.channel.send({embeds: [embed]})
 }
@@ -315,7 +316,7 @@ if (m.content === '.kurbeh') {
 
   .setAuthor({ name: `${m.author.username} :`, iconURL: `${m.author.avatarURL()}`})
   .setColor(m.member.displayHexColor)
-  .setImage(Variables.kurbeh)
+  .setImage(AruVar.kurbeh)
 
   m.channel.send({embeds: [embed]});
 }
@@ -327,7 +328,7 @@ if (m.content === '.ree') {
 
   .setAuthor({ name: `${m.author.username} :`, iconURL: `${m.author.avatarURL()}`})
   .setColor(m.member.displayHexColor)
-  .setImage(Variables.reee)
+  .setImage(AruVar.reee)
   .setFooter({text: 'REEEEEEE'})
 
   m.channel.send({embeds: [embed]});
@@ -340,7 +341,7 @@ if (m.content.startsWith('.what')) {
 
   .setAuthor({ name: `${m.author.username} : ...`, iconURL: `${m.author.avatarURL()}`})
   .setColor(m.member.displayHexColor)
-  .setImage(Variableswhat[Math.floor(Math.random() * Variables.what.length)])
+  .setImage(AruVar.what[Math.floor(Math.random() * AruVar.what.length)])
 
   m.channel.send({embeds: [embed]});
 }
@@ -352,7 +353,7 @@ if (m.content.startsWith('.ara')) {
   
   .setAuthor({ name: `${m.author.username} : ara ara`, iconURL: `${m.author.avatarURL()}`})
   .setColor(m.member.displayHexColor)
-  .setImage(Variables.Ara[Math.floor(Math.random() * Variables.Ara.length)])
+  .setImage(AruVar.Ara[Math.floor(Math.random() * AruVar.Ara.length)])
   
   m.channel.send({embeds: [embed]});
 }
