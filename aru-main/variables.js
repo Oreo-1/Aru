@@ -227,3 +227,25 @@ let Ara = [
     "https://cdn.discordapp.com/attachments/620937132030296065/726648970121576498/tenor.gif"
 
 ];
+
+module.exports = {
+    huglinks,
+    patlinks,
+    bitelinks,
+    coinflip,
+    cookiegive,
+    aruask,
+    AruFortune,
+    dancelinks,
+    Neko,
+    poutlinks,
+    Bongo,
+    cards,
+    AHH,
+    run,
+    danceblobs,
+    kurbeh,
+    reee,
+    what,
+    Ara
+};
