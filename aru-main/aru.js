@@ -508,6 +508,12 @@ switch(m.content.toUpperCase()) {case 'EWE': m.channel.send('lale')}
 //     });
 // }
 
+//Shut down bot
+if (m.content === '.shutdown' && m.member.permissions.has('Administrator')){
+  m.channel.send('Shutting down...');
+  aru.destroy(); // Disconnects the bot from Discord
+}
+
 
 }); //end of messageCreate
 
