@@ -510,9 +510,14 @@ switch(m.content.toUpperCase()) {case 'EWE': m.channel.send('lale')}
 // }
 
 //Shut down bot
-if (m.content === '.shutdown' && m.member.permissions.has('Administrator')){
-  m.channel.send('Shutting down...');
-  aru.destroy(); // Disconnects the bot from Discord
+if (m.content === '.shutdown') {
+  if (m.member.permissions.has('Administrator')) {
+    await m.channel.send('Shutting down...');
+    console.log(`${c.user.tag} is offline.`);
+    aru.destroy(); // Disconnects the bot from Discord
+  } else {
+    await m.channel.send('nein');
+  }
 }
 
 
