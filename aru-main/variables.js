@@ -27,7 +27,15 @@ const Variables = [
         bitelinks: ["https://cdn.discordapp.com/attachments/676118559612600371/711758483728498709/bite1.gif",
         "https://cdn.discordapp.com/attachments/676118559612600371/711758483292160041/bite2.gif",
         "https://cdn.discordapp.com/attachments/676118559612600371/711758453806202940/bite3.gif"],
-        coinflip: ["Heads!", "Tails!"],
+        coinflipH: [
+            "https://ik.imagekit.io/oreo/aru-cdn/coin_head_aru.png?updatedAt=1758114596639",
+            "https://ik.imagekit.io/oreo/aru-cdn/coin_head_mnk.png?updatedAt=1758114149040",
+
+        ],
+        coinflipT: [
+            "https://ik.imagekit.io/oreo/aru-cdn/coin_tail_aru.png?updatedAt=1758114596672",
+            "https://ik.imagekit.io/oreo/aru-cdn/coin_tail_mnk.png?updatedAt=1758114149197"
+        ],
         cookiegive: [
             "https://cdn.discordapp.com/attachments/573101060852416513/735752567543300126/DBvbJ4grTZuOgR3YyWCliS-w6GOn0R5VN2Zg9zKdefiNhTNh_wXlJOwK-aeICmkPNcUd5YVd-_bseyqA9tnWTg.gif",
             "https://cdn.discordapp.com/attachments/573101060852416513/735752592365191268/7c33f9034d0fbd27504683dfcfc619a3.gif",
