@@ -161,7 +161,7 @@ if (m.content.startsWith('.waifu')) {
 }
 
 // [3g] Fun: Coin flip
-if (m.content === '.coin') {m.channel.send(Variables.coinflip[Math.floor(Math.random() * Variables.coinflip.length)])}
+if (m.content === '.coin') {m.channel.send(Variables[0].coinflip[Math.floor(Math.random() * Variables[0].coinflip.length)])}
 
 // [3h] Fun: Cookie
     if (m.content.startsWith('.cookie')) {
@@ -278,7 +278,7 @@ if (m.content.toLowerCase() === '.ahh') {
   const embed = new EmbedBuilder()
   .setAuthor({ name: `${m.author.username} :`, iconURL: `${m.author.avatarURL()}`})
   .setColor(0x3333CC)
-  .setImage(Variables.AHH[Math.floor(Math.random() * Variables.AHH.length)])
+  .setImage(Variables[0].AHH[Math.floor(Math.random() * Variables[0].AHH.length)])
   .setFooter({text: 'srsly why do u like to scream so much :P'})
   
   m.channel.send({embeds: [embed]});
