@@ -3,6 +3,8 @@ const { Client , ActivityType , PresenceUpdateStatus , IntentsBitField , EmbedBu
 const Variables = require('./variables');
 const AruVar = Variables[0];
 
+const snipes = new Map();
+
 const aru = new Client({
     intents: [
         IntentsBitField.Flags.Guilds,
@@ -493,6 +495,22 @@ if (m.content === '.invite') {
 // [4h] Utility: Server Member List
 if (m.content === '.members') {m.channel.send('<:soontm:662611931475214376>')}
 
+// [4i] Utility: Snipe
+if (m.content === '.snipe') {
+  const snipe = snipes.get(m.channel.id);
+  if (!snipe) {
+    return message.reply("There's nothing to snipe!");
+  }
+
+  const embed = new EmbedBuilder()
+    .setAuthor({ name: snipe.author.tag, iconURL: snipe.author.displayAvatarURL() })
+    .setDescription(snipe.content)
+    .setFooter({ text: `Deleted at: ${snipe.createdAt.toLocaleString()}` })
+    .setColor(0x00C8FF);
+
+  m.channel.send({ embeds: [embed] });
+}
+
 // [5a] Misc Response: Aru
 let callaru = ["yeah?","wot","sup","huh","ewot","nanda","apa",]
 switch(m.content.toUpperCase()) {
@@ -539,5 +557,16 @@ if (m.content === '.shutdown') {
 
 
 }); //end of messageCreate
+
+aru.on('messageDelete', async (m) => {
+  if (m.partial) return;
+  if (!m.content) return;
+
+  snipes.set(m.channel.id, {
+    content: m.content,
+    author: m.author,
+    createdAt: m.createdAt
+  });
+}); // For snipe command
 
 aru.login(process.env.himitsu);
