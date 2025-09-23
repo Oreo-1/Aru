@@ -216,7 +216,89 @@ const Variables = [
             "https://cdn.discordapp.com/attachments/620937132030296065/726647353695797358/Akeno_ara_ara.gif",
             "https://cdn.discordapp.com/attachments/620937132030296065/726648970121576498/tenor.gif"
         
-        ]
+        ],
+        help: "```• Feedback Command •```\n"+
+            "**.Feedback**\n"+
+            "submit your feedback/idea using this command and it will appear on Oreo's DMs and <#682131008111247447>!\n\n"+
+            "```• Moderation (mod only) •```\n"+
+            "**.mute**\n"+
+            "phil swift would've been proud... eh i mean-\n\n"+
+            "**.unmute**\n"+
+            "-naem i he ...duorp neeb ev'dluow tfiws lihp\n\n"+
+            "**.kick**\n"+
+            "mess with the law, ya get the boot\n\n"+
+            "**.ban**\n"+
+            "the only thing much more powerful than Thor's hammer\n\n"+
+            "```• Le Main Thing Commands •```\n"+
+            "**.hug** {user}\n"+
+            "online anti-depressant (not guaranteed)\n\n"+
+            "**.pat** {user}\n"+
+            "pa-patto shinaide kudasai!\n\n"+
+            "**.slap** {user}\n"+
+            "to s l a p p\n\n"+
+            "**.punch** {user}\n"+
+            "ORA ORA ORA ORA\n\n"+
+            "**.bite** {user}\n"+
+            "ÒwÓ\n\n"+
+            "**.waifu** {user or urself}\n"+
+            "i will rate how waifuable you are >:3 (with the power of rng of course)\n\n"+
+            "**.coin**\n"+
+            "*\"don't flip a coin for its outcome, flip a coin to know which outcome you're hoping for.\"*\n\n"+
+            "**.cookie** {user}\n"+
+            "have an oreo. i hope ya feel better :>\n\n"+
+            "**.ask**\n"+
+            "ask me anything you want! (yes and no questions only)\n\n"+
+            "**.fortune**\n"+
+            "i'm the best fortune teller around here!\n\n"+
+            "**.say**\n"+
+            "don't make me say stupid stuff plz\n\n"+
+            "**.dance**\n"+
+            "just dance.\n\n"+
+            "**.neko**\n"+
+            "do not ask.\n\n"+
+            "**.pout**\n"+
+            "i don't even know how should you describe this command\n\n"+
+            "**.bongo**\n"+
+            "catto\n\n"+
+            "**.card**\n"+
+            "draw a randomized card from a deck.\n\n"+
+            "**.dice**\n"+
+            "a D6 dice. don't gamble.\n\n"+
+            "**.ahh**\n"+
+            "scream your hearts out! (DanZmeN tribute bcuz ye)\n\n"+
+            "**.run**\n"+
+            "Ningerundayooo! Smokey!\n\n"+
+            "**.blob**\n"+
+            "wobble wobble\n\n"+
+            "**.kurbeh**\n"+
+            "<:kurbeh:629700959563677696>\n\n"+
+            "**.ree**\n"+
+            "REEEEEEEEEEEEEE\n\n"+
+            "**.what**\n"+
+            "nani the f-\n\n"+
+            "**.ara**\n"+
+            "onee-chan intensifies\n\n"+
+            "**.f**\n"+
+            "press F to pay respect.\n\n"+
+            "**.tableflip**\n"+
+            "(╯°□°）╯︵ ┻━┻\n\n"+
+            "```• Utility •```\n"+
+            "**.profile {user or urself}**\n"+
+            "to check your account information\n\n"+
+            "**.avatar {user or urself}**\n"+
+            "hey look it's you! or.. someone else xd\n\n"+
+            "**.help**\n"+
+            "to... wait a minute..\n\n"+
+            "**.aru**\n"+
+            "na..nani\n\n"+
+            "**.server**\n"+
+            "to check the server's information\n\n"+
+            "**.ping**\n"+
+            "if you're wondering how high is my ping... ||additionally oreo's wifi speed||\n\n"+
+            "**.system**\n"+
+            "the invite link to『The System』\n\n"+
+            "**.members**\n"+
+            "to list the members available on the server (comming soon)**"
     }
 ]
 
