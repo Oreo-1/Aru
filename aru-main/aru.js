@@ -23,21 +23,10 @@ aru.on('clientReady', (c) => {
 
 aru.on('messageCreate', async (m) => {
 
-// this is so that aru does't respond to herself
+// this is so that aru doesn't respond to herself
 if (m.author.bot) {return;}
 
 if (m.content === '.test') {m.channel.send(`return`);} // test
-
-if (m.content.startsWith('.gdrivetest')) { // embed test
-
-  const embed = new EmbedBuilder()
-  .setDescription(`output`)
-  .setColor(0x00C8FF)
-  .setImage("https://i.imgur.com/5Xmmrnx.jpeg")
-
-  m.channel.send({embeds: [embed]});
-
-}
 
 // this is for user input idk if this still works need revision i think
 const args = m.content.slice().trim().split(/ +/g);
@@ -380,6 +369,43 @@ switch(m.content.toUpperCase()) {case '.F': m.channel.send(`${m.author.username}
 
 // [3z] Fun: Tableflip
 if (m.content === '.tableflip'){m.channel.send('┬─┬ノ( º _ ºノ)').then((msg)=> {setTimeout(function(){msg.edit('(╯°□°）╯︵ ┻━┻');}, 750)});}
+
+// [3aa (stupid codenaming anyway who came up with this) Fun: RPS]
+// beta:rps command
+if (m.content.startsWith(".rps")) {
+  const choicesRPS = ["rock", "paper", "scissors"];
+  const userRPS = m.content.split(" ")[1]?.toLowerCase();
+  const aruRPS = choicesRPS[Math.floor(Math.random() * choicesRPS.length)];
+
+  if (!choicesRPS.includes(userRPS)) {
+    m.channel.send(
+      "Yang benar lah. Choose `rock`, `paper`, or `scissors`.\nExample: `.rps rock`"
+    );
+    return;
+  }
+
+  let resultRPS = "";
+  if (userRPS === aruRPS) {
+    resultRPS = "It's a tie!";
+  } else if (
+    (userRPS === "rock" && aruRPS === "scissors") ||
+    (userRPS === "paper" && aruRPS === "rock") ||
+    (userRPS === "scissors" && aruRPS === "paper")
+  ) {
+    resultRPS = "You got lucky";
+  } else {
+    resultRPS = "Too bad bro";
+  }
+
+  const erpees = new EmbedBuilder()
+    .setColor("#00BFFF")
+    .setTitle("Rock Paper Scissors")
+    .setDescription(`You chose **${userRPS}**.\nI chose **${aruRPS}**.\n${resultRPS}`)
+    .setImage(rpsImages[`${userRPS}_${aruRPS}`]);
+
+  m.channel.send({ embeds: [erpees] });
+}
+
 
   // [4a] Utility: Profile
 if (m.content.startsWith('.profile')) {
