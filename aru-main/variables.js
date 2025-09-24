@@ -299,6 +299,17 @@ const Variables = [
             "the invite link to『The System』\n\n"+
             "**.members**\n"+
             "to list the members available on the server (comming soon)**"
+    },
+    rpsImages = {
+      "rock_rock": "https://i.imgur.com/vK9Xqb3.png",
+      "rock_paper": "https://i.imgur.com/vK9Xqb3.png",
+      "rock_scissors": "https://i.imgur.com/vK9Xqb3.png",
+      "paper_rock": "https://i.imgur.com/vK9Xqb3.png",
+      "paper_paper": "https://i.imgur.com/vK9Xqb3.png",
+      "paper_scissors": "https://i.imgur.com/vK9Xqb3.png",
+      "scissors_rock": "https://i.imgur.com/vK9Xqb3.png",
+      "scissors_paper": "https://i.imgur.com/vK9Xqb3.png",
+      "scissors_scissors": "https://i.imgur.com/vK9Xqb3.png"
     }
 ]
 
