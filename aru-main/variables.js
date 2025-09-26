@@ -28,13 +28,13 @@ const Variables = [
         "https://cdn.discordapp.com/attachments/676118559612600371/711758483292160041/bite2.gif",
         "https://cdn.discordapp.com/attachments/676118559612600371/711758453806202940/bite3.gif"],
         coinflipH: [
-            "https://ik.imagekit.io/oreo/aru-cdn/coin_head_aru.png?updatedAt=1758114596639",
-            "https://ik.imagekit.io/oreo/aru-cdn/coin_head_mnk.png?updatedAt=1758114149040",
+            "https://ik.imagekit.io/oreo/aru-cdn/coinflip/coin_head_aru.png?updatedAt=1758903024531",
+            "https://ik.imagekit.io/oreo/aru-cdn/coinflip/coin_head_mnk.png?updatedAt=1758903028092",
 
         ],
         coinflipT: [
-            "https://ik.imagekit.io/oreo/aru-cdn/coin_tail_aru.png?updatedAt=1758114596672",
-            "https://ik.imagekit.io/oreo/aru-cdn/coin_tail_mnk.png?updatedAt=1758114149197"
+            "https://ik.imagekit.io/oreo/aru-cdn/coinflip/coin_tail_aru.png?updatedAt=1758903023409",
+            "https://ik.imagekit.io/oreo/aru-cdn/coinflip/coin_tail_mnk.png?updatedAt=1758903026388"
         ],
         cookiegive: [
             "https://cdn.discordapp.com/attachments/573101060852416513/735752567543300126/DBvbJ4grTZuOgR3YyWCliS-w6GOn0R5VN2Zg9zKdefiNhTNh_wXlJOwK-aeICmkPNcUd5YVd-_bseyqA9tnWTg.gif",
@@ -300,17 +300,22 @@ const Variables = [
             "**.members**\n"+
             "to list the members available on the server (comming soon)**"
     },
-    rpsImages = {
-      "rock_rock": "https://i.imgur.com/vK9Xqb3.png",
-      "rock_paper": "https://i.imgur.com/vK9Xqb3.png",
-      "rock_scissors": "https://i.imgur.com/vK9Xqb3.png",
-      "paper_rock": "https://i.imgur.com/vK9Xqb3.png",
-      "paper_paper": "https://i.imgur.com/vK9Xqb3.png",
-      "paper_scissors": "https://i.imgur.com/vK9Xqb3.png",
-      "scissors_rock": "https://i.imgur.com/vK9Xqb3.png",
-      "scissors_paper": "https://i.imgur.com/vK9Xqb3.png",
-      "scissors_scissors": "https://i.imgur.com/vK9Xqb3.png"
-    }
+   rpsImages = {
+    "rock_rock": "https://ik.imagekit.io/oreo/aru-cdn/rockpaperscissors/rock_rock.png?updatedAt=1758903725246",
+    "rock_paper": "https://ik.imagekit.io/oreo/aru-cdn/rockpaperscissors/rock_paper.png?updatedAt=1758903725091",
+    "rock_scissors": "https://ik.imagekit.io/oreo/aru-cdn/rockpaperscissors/rock_scissors.png?updatedAt=1758903725366",
+    "paper_rock": "https://ik.imagekit.io/oreo/aru-cdn/rockpaperscissors/paper_rock.png?updatedAt=1758903725413",
+    "paper_paper": "https://ik.imagekit.io/oreo/aru-cdn/rockpaperscissors/paper_paper.png?updatedAt=1758903725479",
+    "paper_scissors": "https://ik.imagekit.io/oreo/aru-cdn/rockpaperscissors/paper_scissors.png?updatedAt=1758903725244",
+    "scissors_rock": "https://ik.imagekit.io/oreo/aru-cdn/rockpaperscissors/scissors_rock.png?updatedAt=1758903724370",
+    "scissors_paper": "https://ik.imagekit.io/oreo/aru-cdn/rockpaperscissors/scissors_paper.png?updatedAt=1758903725388",
+    "scissors_scissors": "https://ik.imagekit.io/oreo/aru-cdn/rockpaperscissors/scissors_scissors.png?updatedAt=1758903725237"
+  },
+    rpsEgg = {
+    "la granada": "https://ik.imagekit.io/oreo/aru-cdn/rockpaperscissors/EasterEgg/granada.png?updatedAt=1758903980275",
+    "brick": "https://ik.imagekit.io/oreo/aru-cdn/rockpaperscissors/EasterEgg/brick.png?updatedAt=1758903980423",
+    // "fuk-u": "https://i.imgur.com/vK9Xqb3.png"
+  }
 ]
 
 module.exports = Variables;
