@@ -371,11 +371,9 @@ switch(m.content.toUpperCase()) {case '.F': m.channel.send(`${m.author.username}
 if (m.content === '.tableflip'){m.channel.send('┬─┬ノ( º _ ºノ)').then((msg)=> {setTimeout(function(){msg.edit('(╯°□°）╯︵ ┻━┻');}, 750)});}
 
 // [3aa (stupid codenaming anyway who came up with this) Fun: RPS]
-// beta:rps command
 if (m.content.startsWith(".rps")) {
   const choicesRPS = ["rock", "paper", "scissors"];
   const userRPS = m.content.split(" ")[1]?.toLowerCase();
-  const aruRPS = choicesRPS[Math.floor(Math.random() * choicesRPS.length)];
 
   if (!choicesRPS.includes(userRPS)) {
     m.channel.send(
@@ -384,24 +382,40 @@ if (m.content.startsWith(".rps")) {
     return;
   }
 
+  let aruRPS;
   let resultRPS = "";
-  if (userRPS === aruRPS) {
-    resultRPS = "It's a tie!";
-  } else if (
-    (userRPS === "rock" && aruRPS === "scissors") ||
-    (userRPS === "paper" && aruRPS === "rock") ||
-    (userRPS === "scissors" && aruRPS === "paper")
-  ) {
-    resultRPS = "You got lucky";
+  let rpsImageURL = "";
+
+  if (Math.floor(Math.random() * 10) === 0) {
+    
+    const keys = Object.keys(rpsEgg);
+    aruRPS = keys[Math.floor(Math.random() * keys.length)];
+    resultRPS = "You.. lose?";
+    rpsImageURL = rpsEgg[aruRPS];
   } else {
-    resultRPS = "Too bad bro";
+    aruRPS = choicesRPS[Math.floor(Math.random() * choicesRPS.length)];
+
+    if (userRPS === aruRPS) {
+      resultRPS = "It's a tie!";
+    } else if (
+      (userRPS === "rock" && aruRPS === "scissors") ||
+      (userRPS === "paper" && aruRPS === "rock") ||
+      (userRPS === "scissors" && aruRPS === "paper")
+    ) {
+      resultRPS = "You got lucky.";
+    } else {
+      resultRPS = "I win.";
+    }
+
+    rpsImageURL = rpsImages[`${userRPS}_${aruRPS}`];
   }
 
   const erpees = new EmbedBuilder()
     .setColor("#00BFFF")
     .setTitle("Rock Paper Scissors")
-    .setDescription(`You chose **${userRPS}**.\nI chose **${aruRPS}**.\n${resultRPS}`)
-    .setImage(rpsImages[`${userRPS}_${aruRPS}`]);
+    .setDescription(`I choose **${aruRPS}**.`)
+    .setImage(rpsImageURL)
+    .setFooter({text: resultRPS});
 
   m.channel.send({ embeds: [erpees] });
 }
