@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Oreo-1/Aru.git"
   },
-  "license": "GPL-3.0-or-later",
+  "license": "MIT",
   "author": "Oreo-1",
   "type": "commonjs",
   "main": "aru-main/aru.js",
