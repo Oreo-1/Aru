@@ -14,7 +14,7 @@ A dedicated Discord bot for my private server, one of the first projects that go
 
 ## Features
 - a multi-purpose discord bot with (almost) every tool for a server
-- prefixes instead of slash commands
+- prefixes instead of slash commands just like the founding fathers intended
 - :D eeh i'll finish this later
 
 <!-- might gonna need this later -->

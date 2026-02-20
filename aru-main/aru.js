@@ -1,3 +1,5 @@
+process.title = "Aru - best girl";
+
 require('dotenv').config();
 const { Client , ActivityType , PresenceUpdateStatus , IntentsBitField , EmbedBuilder } = require('discord.js');
 const Variables = require('./variables');
@@ -32,15 +34,16 @@ if (m.content === '.test') {m.channel.send(`👋`);} // test
 const args = m.content.slice().trim().split(/ +/g);
 
 // [A1] Aru: Shutdown
-if (m.content === '.shutdown') {
-  if (m.member.permissions.has('Administrator')) {
-    await m.channel.send('Shutting down...');
-    aru.destroy(); // Disconnects the bot from Discord
-    console.log(`aru is offline (from shutdown admin command)`);
-  } else {
-    await m.channel.send('nein');
-  }
-}
+if (m.content === '.shutdown') {m.channel.send('process is now handled by pm2')}
+// if (m.content === '.shutdown') {
+//   if (m.member.permissions.has('Administrator')) {
+//     await m.channel.send('Shutting down...');
+//     aru.destroy(); // Disconnects the bot from Discord
+//     console.log(`aru is offline (from shutdown admin command)`);
+//   } else {
+//     await m.channel.send('nein');
+//   }
+// }
 
 // [A2] Aru: Feedback
 if (m.content.startsWith('.feedback')) {
