@@ -61,6 +61,8 @@ if (m.content.startsWith('.feedback')) {
   generationChannel.send({ embeds: [embed] });
 }
 
+// [B1] Moderation: ..where are the moderation commands?
+
 // [C1] Minigame: RPS
 if (m.content.startsWith(".rps")) {
   const choicesRPS = ["rock", "paper", "scissors"];
@@ -510,7 +512,7 @@ if (m.content === '.aru') {
     .setDescription(`•Ping\n-My Latency is ${test.createdTimestamp - m.createdTimestamp}ms.\n-My API Latency is ${Math.round(aru.ws.ping)}ms\n-I've been around for ${hours} hour(s)`);
 
     m.channel.send({embeds: [embed]});
-}
+} // note: session is now managed by pm2
 
 // [E5] Utility: Server Info
 if (m.content === '.server') {
@@ -578,6 +580,8 @@ switch(m.content.toUpperCase()) {case 'EWE': m.channel.send('lale')}
 //       m.channel.send('Failed to change role color!');
 //     });
 // }
+
+// [G1] EXPERIMENTAL: ollama integration
 
 
 

@@ -16,7 +16,8 @@
   "main": "aru-main/aru.js",
   "scripts": {
     "aru:start": "pm2 start . --name Aru --cron-restart=\"0 0 * * *\"",
-    "aru:stop": "pm2 kill"
+    "aru:stop": "pm2 kill",
+    "aru:status": "pm2 ls"
   },
   "dependencies": {
     "discord.js": "^14.22.1",
