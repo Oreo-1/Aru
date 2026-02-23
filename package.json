@@ -1,6 +1,6 @@
 {
   "name": "aru-ns",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "a dedicated bot for No System (formerly The System) discord server.",
   "homepage": "https://github.com/Oreo-1/Aru#readme",
   "bugs": {
@@ -15,7 +15,8 @@
   "type": "commonjs",
   "main": "aru-main/aru.js",
   "scripts": {
-    "aru:start": "pm2 start . --name Aru --cron-restart=\"0 0 * * *\"",
+    "test": "node .",
+    "aru:start": "pm2 start . --name Aru --cron-restart=\"0 0 * * *\" --restart-delay 5000",
     "aru:stop": "pm2 kill",
     "aru:status": "pm2 ls"
   },

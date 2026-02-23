@@ -23,29 +23,29 @@ aru.on('clientReady', (c) => {
 
 })
 
-aru.on('messageCreate', async (m) => {
+process.on("SIGINT", shutdown);process.on("SIGTERM", shutdown);process.on("SIGQUIT", shutdown);
+async function shutdown(signal) {
+  console.log(` Received ${signal}. Shutting down bot...`);
 
-// this is so that aru doesn't respond to herself
+  try {
+    await aru.destroy();
+    console.log("Discord client destroyed.");
+  } catch (err) {
+    console.error("Error during destroy:", err);
+  }
+
+  process.exit(0);
+}
+
+aru.on('messageCreate', async (m) => { // message create start
+
 if (m.author.bot) {return;}
-
-if (m.content === '.test') {m.channel.send(`👋`);} // test
+if (m.content === '.test') {m.channel.send(`👋`);}
 
 // this is for user input idk if this still works need revision i think
 const args = m.content.slice().trim().split(/ +/g);
 
-// [A1] Aru: Shutdown
-if (m.content === '.shutdown') {m.channel.send('process is now handled by pm2')}
-// if (m.content === '.shutdown') {
-//   if (m.member.permissions.has('Administrator')) {
-//     await m.channel.send('Shutting down...');
-//     aru.destroy(); // Disconnects the bot from Discord
-//     console.log(`aru is offline (from shutdown admin command)`);
-//   } else {
-//     await m.channel.send('nein');
-//   }
-// }
-
-// [A2] Aru: Feedback
+// [A1] Aru: Feedback
 if (m.content.startsWith('.feedback')) {
   if (m.channel.type == "DM") return m.author.send("Sorry, this command isn't available in DMs!")
   
@@ -259,7 +259,7 @@ if (m.content.startsWith('.coin')) {
 }
 
 // [D9] Fun: Ask Aru
-if (m.content === '.ask') {m.channel.send(AruVar.aruask[Math.floor(Math.random() * AruVar.aruask.length)])}
+if (m.content === '.yesno') {m.channel.send(AruVar.aruask[Math.floor(Math.random() * AruVar.aruask.length)])}
 
 // [D10] Fun: Aru's Fortune
 if (m.content.startsWith('.fortune')) {
@@ -582,8 +582,37 @@ switch(m.content.toUpperCase()) {case 'EWE': m.channel.send('lale')}
 // }
 
 // [G1] EXPERIMENTAL: ollama integration
+async function queryOpenWebUI(prompt) {
+    const response = await fetch(`${process.env.OWU_URL}/api/chat/completions`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${process.env.OWU_API_KEY}`
+        },
+        body: JSON.stringify({
+            model: process.env.MODEL_NAME,
+            messages: [{ role: "user", content: prompt }]
+        })
+    });
 
+    if (!response.ok) throw new Error(`API Error: ${response.status}`);
+    
+    const data = await response.json();
+    return data.choices[0].message.content;
+}
 
+if (m.content.startsWith('.ask')) {
+    const prompt = m.content.replace('.ask', '').trim();
+    
+    try {
+        await m.channel.sendTyping();
+        const reply = await queryOpenWebUI(prompt);
+        await m.reply(reply);
+    } catch (error) {
+        console.error(error);
+        await m.reply("can't understand you chief.");
+    }
+}
 
 }); //end of messageCreate
 
