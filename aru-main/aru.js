@@ -14,14 +14,31 @@ const aru = new Client({
     ],
 });
 
-aru.on('clientReady', (c) => {
+// aru.on('clientReady', (c) => {
+//     console.log(`${c.user.tag} is online.`);
+
+//     aru.user.setPresence({ 
+//       activities: [{ type: ActivityType.Custom, name: 'custom', state: 'bruh i died' }], 
+//       status: PresenceUpdateStatus.DoNotDisturb });
+
+// })
+
+function setStatus() {
+    aru.user.setPresence({
+        activities: [{ 
+            type: ActivityType.Custom, 
+            state: 'bruh i died' 
+        }],
+        status: PresenceUpdateStatus.DoNotDisturb // or simply 'dnd'
+    });
+    console.log('Status updated.');
+}
+
+aru.on('ready', (c) => {
     console.log(`${c.user.tag} is online.`);
-
-    aru.user.setPresence({ 
-      activities: [{ type: ActivityType.Custom, name: 'custom', state: 'bruh i died' }], 
-      status: PresenceUpdateStatus.DoNotDisturb });
-
-})
+    setStatus();
+    setInterval(setStatus, 120 * 60000); // 2 hrs
+});
 
 process.on("SIGINT", shutdown);process.on("SIGTERM", shutdown);process.on("SIGQUIT", shutdown);
 async function shutdown(signal) {
