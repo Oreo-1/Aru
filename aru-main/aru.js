@@ -23,8 +23,6 @@ const aru = new Client({
 
 // })
 
-const { ActivityType, PresenceUpdateStatus } = require('discord.js');
-
 aru.on('clientReady', (c) => {
     console.log(`${c.user.tag} is online.`);
 
