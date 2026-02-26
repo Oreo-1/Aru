@@ -23,27 +23,39 @@ const aru = new Client({
 
 // })
 
+const { ActivityType, PresenceUpdateStatus } = require('discord.js');
+
 aru.on('clientReady', (c) => {
     console.log(`${c.user.tag} is online.`);
+
+    const statuses = [
+        'bruh i died',
+        'test(1)',
+        'istg if the status died again'
+    ];
+
+    let index = 0;
 
     function updateStatus() {
         const now = new Date();
         const timestamp = now.toISOString();
-        aru.user.setPresence({ 
+
+        aru.user.setPresence({
             activities: [{
                 type: ActivityType.Custom,
                 name: 'custom',
-                state: 'bruh i died'
+                state: statuses[index]
             }],
             status: PresenceUpdateStatus.DoNotDisturb
         });
 
-        console.log(`[${timestamp}] Status updated.`);
+        console.log(`[${timestamp}] Status updated to: ${statuses[index]}`);
+        index = (index + 1) % statuses.length;
     }
 
     updateStatus();
-    setInterval(updateStatus, 120 * 60000);
-}); // might need a separate log file
+    setInterval(updateStatus, 30 * 60000);
+}); // GENUINELY don't know why status keeps resetting
 
 process.on("SIGINT", shutdown);process.on("SIGTERM", shutdown);process.on("SIGQUIT", shutdown);
 async function shutdown(signal) {
