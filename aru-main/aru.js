@@ -23,22 +23,27 @@ const aru = new Client({
 
 // })
 
-function setStatus() {
-    aru.user.setPresence({
-        activities: [{ 
-            type: ActivityType.Custom, 
-            state: 'bruh i died' 
-        }],
-        status: PresenceUpdateStatus.DoNotDisturb // or simply 'dnd'
-    });
-    console.log('Status updated.');
-}
-
-aru.on('ready', (c) => {
+aru.on('clientReady', (c) => {
     console.log(`${c.user.tag} is online.`);
-    setStatus();
-    setInterval(setStatus, 120 * 60000); // 2 hrs
-});
+
+    function updateStatus() {
+        const now = new Date();
+        const timestamp = now.toISOString();
+        aru.user.setPresence({ 
+            activities: [{
+                type: ActivityType.Custom,
+                name: 'custom',
+                state: 'bruh i died'
+            }],
+            status: PresenceUpdateStatus.DoNotDisturb
+        });
+
+        console.log(`[${timestamp}] Status updated.`);
+    }
+
+    updateStatus();
+    setInterval(updateStatus, 120 * 60000);
+}); // might need a separate log file
 
 process.on("SIGINT", shutdown);process.on("SIGTERM", shutdown);process.on("SIGQUIT", shutdown);
 async function shutdown(signal) {
@@ -46,7 +51,7 @@ async function shutdown(signal) {
 
   try {
     await aru.destroy();
-    console.log("Discord client destroyed.");
+    console.log("Aru's ded");
   } catch (err) {
     console.error("Error during destroy:", err);
   }
