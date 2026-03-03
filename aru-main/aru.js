@@ -1,8 +1,17 @@
 process.title = "Aru - best girl";
+process.on("SIGINT", shutdown);process.on("SIGTERM", shutdown);process.on("SIGQUIT", shutdown);
+async function shutdown(signal) {
+  console.log(` Received ${signal}. Shutting down bot...`);
+  try { await aru.destroy(); console.log("Aru's ded"); }
+  catch (err) { console.error("Error during destroy:", err); }
+  process.exit(0);
+}
 
 require('dotenv').config();
-const { Client , ActivityType , PresenceUpdateStatus , IntentsBitField , EmbedBuilder } = require('discord.js');
+const { Client, IntentsBitField , EmbedBuilder } = require('discord.js');
 const Variables = require('./variables');
+const AruStatus = require('./statusvars');
+
 const AruVar = Variables[0];
 
 const aru = new Client({
@@ -14,60 +23,8 @@ const aru = new Client({
     ],
 });
 
-// aru.on('clientReady', (c) => {
-//     console.log(`${c.user.tag} is online.`);
-
-//     aru.user.setPresence({ 
-//       activities: [{ type: ActivityType.Custom, name: 'custom', state: 'bruh i died' }], 
-//       status: PresenceUpdateStatus.DoNotDisturb });
-
-// })
-
-aru.on('clientReady', (c) => {
-    console.log(`${c.user.tag} is online.`);
-
-    const statuses = [
-        'bruh i died',
-        'test(1)',
-        'istg if the status died again'
-    ];
-
-    let index = 0;
-
-    function updateStatus() {
-        const now = new Date();
-        const timestamp = now.toISOString();
-
-        aru.user.setPresence({
-            activities: [{
-                type: ActivityType.Custom,
-                name: 'custom',
-                state: statuses[index]
-            }],
-            status: PresenceUpdateStatus.DoNotDisturb
-        });
-
-        console.log(`[${timestamp}] Status updated to: ${statuses[index]}`);
-        index = (index + 1) % statuses.length;
-    }
-
-    updateStatus();
-    setInterval(updateStatus, 30 * 60000);
-}); // GENUINELY don't know why status keeps resetting
-
-process.on("SIGINT", shutdown);process.on("SIGTERM", shutdown);process.on("SIGQUIT", shutdown);
-async function shutdown(signal) {
-  console.log(` Received ${signal}. Shutting down bot...`);
-
-  try {
-    await aru.destroy();
-    console.log("Aru's ded");
-  } catch (err) {
-    console.error("Error during destroy:", err);
-  }
-
-  process.exit(0);
-}
+// setup status (statusvars.js)
+AruStatus(aru);
 
 aru.on('messageCreate', async (m) => { // message create start
 
@@ -635,7 +592,11 @@ async function queryOpenWebUI(prompt) {
 
 if (m.content.startsWith('.ask')) {
     const prompt = m.content.replace('.ask', '').trim();
-    
+
+    if (!prompt) {
+        return m.channel.send("yeah.. what?");
+    }
+
     try {
         await m.channel.sendTyping();
         const reply = await queryOpenWebUI(prompt);
