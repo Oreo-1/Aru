@@ -1,40 +1,41 @@
 const statuses = [
-
-    // statuses put here will be rotated every 30 minutes :v
+    // statuses put here will be rotated :v
     'that deleted user in welcome was me',
     'good day isn\'t it',
     'try ".ask" command (experimental)',
     'pizza'
-
 ];
 
 function AruStatus(aru) {
-
     const { ActivityType, PresenceUpdateStatus } = require('discord.js');
-    let index = 0;
+    let lastStatus; // optional: avoid repeating the same status twice
 
     aru.on('clientReady', (c) => {
         console.log(`${c.user.tag} is online.`);
 
+    function getRandomStatus() {
+        return statuses[Math.floor(Math.random() * statuses.length)];
+}
+
         function updateStatus() {
             const now = new Date();
             const timestamp = now.toISOString();
+            const statusText = getRandomStatus();
 
             aru.user.setPresence({
                 activities: [{
                     type: ActivityType.Custom,
                     name: 'custom',
-                    state: statuses[index]
+                    state: statusText
                 }],
                 status: PresenceUpdateStatus.DoNotDisturb
             });
 
-            console.log(`[${timestamp}] Status updated to: ${statuses[index]}`);
-            index = (index + 1) % statuses.length;
+            console.log(`[${timestamp}] Status updated to: ${statusText}`);
         }
 
-        updateStatus();
-        setInterval(updateStatus, 30 * 60000);
+        updateStatus(); // set initial status
+        setInterval(updateStatus, 180 * 60000); // rotate every 3 hours
     });
 }
 
