@@ -8,7 +8,6 @@ const statuses = [
 
 function AruStatus(aru) {
     const { ActivityType, PresenceUpdateStatus } = require('discord.js');
-    let lastStatus; // optional: avoid repeating the same status twice
 
     aru.on('clientReady', (c) => {
         console.log(`${c.user.tag} is online.`);
@@ -34,8 +33,8 @@ function AruStatus(aru) {
             console.log(`[${timestamp}] Status updated to: ${statusText}`);
         }
 
-        updateStatus(); // set initial status
-        setInterval(updateStatus, 180 * 60000); // rotate every 3 hours
+        updateStatus();
+        setInterval(updateStatus, 180 * 60000);
     });
 }
 
