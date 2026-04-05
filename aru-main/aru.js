@@ -477,10 +477,11 @@ if (m.content.startsWith('.avatar')) {
 // [E3] Utility: Help List
 if (m.content === '.help') {
   const embed = new EmbedBuilder()
-    .setTitle(`Command List (Beta)`)
+    .setTitle(`Command List`)
     .setColor(0x00C8FF)
-    .setDescription(AruVar.help)
-    .setFooter({text: 'this took me two days to make for some reason'});
+    // .setDescription(AruVar.help)
+    .setDescription('https://aru-docs.pages.dev/')
+    .setFooter({text: 'it will look better i swear'});
   m.channel.send({embeds: [embed]});
 }
 

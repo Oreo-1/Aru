@@ -34,7 +34,7 @@ function AruStatus(aru) {
         }
 
         updateStatus();
-        setInterval(updateStatus, 180 * 60000);
+        setInterval(updateStatus, 200 * 60000);
     });
 }
 
