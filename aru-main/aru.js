@@ -7,7 +7,6 @@ async function shutdown(signal) {
   process.exit(0);
 }
 
-require('dotenv').config();
 const { Client, IntentsBitField , EmbedBuilder } = require('discord.js');
 const Variables = require('./variables');
 const AruStatus = require('./statusvars');

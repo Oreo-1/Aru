@@ -15,15 +15,14 @@
   "type": "commonjs",
   "main": "aru-main/aru.js",
   "scripts": {
-    "test": "node .",
-    "start": "pm2 start . --name Aru --cron-restart=\"0 0 * * *\" --restart-delay 5000",
+    "test": "node --env-file=.env .",
+    "start": "pm2 start . --name Aru --node-args=\"--env-file=.env\" --cron-restart=\"0 0 * * *\" --restart-delay 5000",
     "stop": "pm2 kill",
     
     "status": "pm2 ls"
   },
   "dependencies": {
     "discord.js": "^14.22.1",
-    "dotenv": "^17.2.2",
     "pm2": "^6.0.13"
   }
 }
