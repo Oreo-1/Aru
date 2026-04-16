@@ -1,0 +1,2 @@
+compare resource usage between pm2 and docker (move to docker if lower resource)
+edit: ok maybe bundling node on docker might just cost more
