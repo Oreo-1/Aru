@@ -1,0 +1,8 @@
+services:
+  aru-ns:
+    image: aru-ina-container:latest
+    build: .
+    container_name: AruContainer
+    env_file:
+      - .env
+    restart: unless-stopped
