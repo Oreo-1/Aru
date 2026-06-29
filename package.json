@@ -15,13 +15,13 @@
   "type": "commonjs",
   "main": "aru-main/aru.js",
   "scripts": {
-    "test": "node --env-file=.env .",
     
-    "start": "node .",
+    "dev": "node --env-file=.env .",
 
     "docker:up": "docker compose up -d --build",
     "docker:down": "docker compose down",
-    "docker:logs": "docker compose logs -f"
+    "docker:logs": "docker compose logs -f",
+    "start": "node ."
   },
   "dependencies": {
     "discord.js": "^14.22.1"
