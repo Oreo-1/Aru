@@ -37,9 +37,10 @@ A dedicated Discord bot for my private server, one of the first projects that go
 ``` sh
 pnpm install
 ```
-2. create an `.env` file from `.env.tamplate`
+2. create an `.env` file from `.env.template`
 - himitsu → discord bot token
-- OWU_URL → Open WebUI api key
+- OWU_URL → Open WebUI api url
+- OWU_API_KEY → Open WebUI api key
 - MODEL_NAME → AI model to use
 
 
