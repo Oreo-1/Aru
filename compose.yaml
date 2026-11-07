@@ -1,7 +1,6 @@
 services:
   aru-ns:
-    image: aru-ina-container:latest
-    build: .
+    image: wooreo/aru-ns:latest
     container_name: AruContainer
     env_file:
       - .env
