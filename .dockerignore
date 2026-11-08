@@ -1,9 +1,9 @@
-node_modules
 .env
-.env.*
 .git
-.gitignore
-*.log
-assets/gh
+node_modules
 archive
+assets
+scripts
 README.md
+TODO.md
+License

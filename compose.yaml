@@ -1,6 +1,7 @@
 services:
   aru-ns:
-    image: wooreo/aru-ns:latest
+    build: .
+    pull_policy: build
     container_name: AruContainer
     env_file:
       - .env
