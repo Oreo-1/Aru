@@ -479,8 +479,8 @@ if (m.content === '.help') {
     .setTitle(`Command List`)
     .setColor(0x00C8FF)
     // .setDescription(AruVar.help)
-    .setDescription('https://aru-docs.pages.dev/')
-    .setFooter({text: 'it will look better i swear'});
+    .setDescription('https://ns-docs.pages.dev/aru/commands')
+    // .setFooter({text: 'it will look better i swear'});
   m.channel.send({embeds: [embed]});
 }
 
